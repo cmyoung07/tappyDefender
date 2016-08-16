@@ -6,32 +6,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity
-        implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    // This is the entry point to our game
+    //this is the entry point to our game
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        //Here we set our UI layout as the view
+        //Here  we set our UI layout as the view
         setContentView(R.layout.activity_main);
 
-        // Get a reference to the button in our layout
-        final Button buttonPlay =
-                (Button)findViewById(R.id.buttonPlay);
-        // Listen for clicks
-        buttonPlay.setOnClickListener(this);
+        //Get a reference to the button in our layout
+        final Button buttonPLay =
+                (Button) findViewById(R.id.buttonPlay);
+
+        //Listen for click
+        buttonPLay.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-        // must be the Play button.
-        // Create a new Intent object
+        //must be the Play button
+        //Create a new intent object
         Intent i = new Intent(this, GameActivity.class);
-        // Start our GameActivity class via the Intent
+        //Start our GaqmeActivity class via the intent
         startActivity(i);
+        //now shut thus activity down
         finish();
+
     }
 }
